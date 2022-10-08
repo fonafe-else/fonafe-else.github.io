@@ -1,0 +1,127 @@
+<html>
+<head>
+
+	<style>
+		h1 {
+		  text-align: center;
+		}	
+	</style>
+
+	<h1>Encuesta de calidad - ELOR</h1>
+
+</head>
+<div>
+	<img alt="" src=""/>
+</div>
+<style type="text/css">
+	.five9-chat-button {
+	/* font-size: 24px !important; */
+	}
+	/* .five9-chat-button:after {
+	content: " Now" !important;
+	} */
+	/* #five9-popout-button {
+	float: right;
+  	} */
+	.five9-chat-button:before {
+		display: inline-block !important;
+	}
+	.five9-chat-button {
+		display: flex;
+		background: linear-gradient(#355FA1, #355FA1) !important;
+		justify-content: flex-end;
+		height: 28px;
+	}
+	.message-container{
+		background-color: #355FA1!important;
+		box-shadow: 0 1px 0 #006663 !important;
+	}
+
+	.five9-chat-button .five9-icon{
+		display: inline-block;
+		position: absolute;
+		left: 6px;
+		top: 4px;
+		width: 40px;
+    	height: 31px;
+		background-image: url('https://firebasestorage.googleapis.com/v0/b/atento-data.appspot.com/o/Logos%2Felor.png?alt=media&token=7b2e018a-d308-428c-bf31-3fb60915f72d');
+		background-repeat: no-repeat;
+		background-size: 40px 35px;
+		background-position: center center;
+		margin: 0;
+		padding: 0;
+	}
+	div.loading-image {
+		margin-top: 30px !important;
+	}
+	#template-thank-you-message{
+		margin-top: 53px;
+	}
+</style>
+<body>
+
+<script src="https://app.five9.com/consoles/SocialWidget/five9-social-widget.min.js"></script>
+<script>
+var options = {
+	"rootUrl": "https://app.five9.com/consoles/",
+	"type": "chat",
+	"title": " ",
+	"tenant": "Atento - FONAFE",
+	"profiles": "CHAT_ELOR",
+	"showProfiles": false,
+	"autostart": true,
+	"theme": "https://firebasestorage.googleapis.com/v0/b/atento-data.appspot.com/o/Custom%20Themes%2Felor-theme.css?alt=media&token=315a1ca3-4a62-4173-ad0f-15004069eac2",
+	"surveyOptions": {
+		"showComment": false,
+		"requireComment": false
+	},
+	"fields": {
+		"name": {
+			"value": "",
+			"show": false,
+			"label": "Name"
+		},
+		"email": {
+			"value": "",
+			"show": false,
+			"label": "Email"
+		},
+		"question":{
+			value: "¡Hola!"
+		}
+	},
+	"playSoundOnMessage": true,
+	"allowCustomerToControlSoundPlay": false,
+	"lang": "https://dventura-tsr.github.io/Files/SpanishLanguage2.js",
+	"showEmailButton": true,
+	"hideDuringAfterHours": false,
+	"useBusinessHours": true,
+	"showPrintButton": false,
+	"allowUsabilityMenu": false,
+	"enableCallback": false,
+	"callbackList": "",
+	"allowRequestLiveAgent": true
+};
+Five9SocialWidget.addWidget(options);
+
+var target = document.body;
+var observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.addedNodes.length && mutation.addedNodes[0].className === 'five9-frame') {
+      console.log("Mutation detected that Five9 Widget was added", mutation);
+      document.getElementsByClassName('five9-text')[0].innerText = "Custom Mini'd";
+      document.getElementsByClassName('five9-text')[1].innerText = "Custom Max'd";
+      //observer.disconnect();
+    }
+  });
+});
+
+var config = { attributes: false, childList: true, characterData: false };
+observer.observe(target, config);
+                  
+
+</script>
+
+
+</body>
+</html>
